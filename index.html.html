@@ -1,0 +1,161 @@
+
+<body>
+
+<!-- BUTTONS -->
+<div style="padding:30px;">
+    <button onclick="showDesigns('order')">Order Now</button>
+    <button onclick="showDesigns('designs')">View Designs</button>
+    <button onclick="showDesigns('led')">LED Boards</button>
+    <button onclick="showDesigns('stickers')">Custom Stickers</button>
+    <button onclick="showDesigns('signboards')">Sign Boards</button>
+    <button onclick="showContact()">Contact Us</button>
+</div>
+
+<!-- DISPLAY SECTION -->
+<div id="display-section">
+    <h2 id="display-title"></h2>
+    <div id="image-gallery"></div>
+</div>
+
+<style>
+
+body {
+      background-color:#e60000;
+	color:#FFD700;
+}
+
+
+button {
+    padding: 15px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ffcc00, #ff6600);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#display-section {
+    display: none;
+    padding: 40px;
+    margin: 20px auto;
+    width: 90%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+}
+
+#display-title {
+    font-size: 40px;
+    color: #ffcc00;
+    margin-bottom: 30px;
+}
+
+#image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#image-gallery img {
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid #ffcc00;
+    box-shadow: 0 0 15px rgba(255,204,0,0.7);
+    transition: 0.3s;
+}
+
+#image-gallery img:hover {
+    transform: scale(1.08);
+}
+
+.contact-box {
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 2;
+}
+</style>
+
+<script>
+function showDesigns(type) {
+    let title = document.getElementById("display-title");
+    let gallery = document.getElementById("image-gallery");
+    let section = document.getElementById("display-section");
+
+    let images = "";
+
+    if (type === "order" || type === "designs") {
+        title.innerHTML = "Our Premium Designs";
+        images = `
+            <img src="">
+            <img src="auto=format&fit=crop&w=800&q=80">
+            <img src="auto=format&fit=crop&w=800&q=80">
+        `;
+    }
+
+    if (type === "led") {
+        title.innerHTML = "LED Board Designs";
+        images = `
+            <img src="auto=format&fit=crop&w=800&q=80">
+            <img src="auto=format&fit=crop&w=800&q=80">
+            <img src="auto=format&fit=crop&w=800&q=80">
+        `;
+    }
+
+    if (type === "stickers") {
+        title.innerHTML = "Sticker Designs";
+        images = `
+            <img src="auto=format&fit=crop&w=800&q=80">
+            <img src="auto=format&fit=crop&w=800&q=80">
+            <img src="auto=format&fit=crop&w=800&q=80">
+        `;
+    }
+
+    if (type === "signboards") {
+        title.innerHTML = "Sign Board Designs";
+        images = `
+            <img src="auto=format&fit=crop&w=800&q=80">
+            <img src="auto=format&fit=crop&w=800&q=80">
+            <img src="">
+        `;
+    }
+
+    gallery.innerHTML = images;
+    section.style.display = "block";
+}
+
+function showContact() {
+    let title = document.getElementById("display-title");
+    let gallery = document.getElementById("image-gallery");
+    let section = document.getElementById("display-section");
+
+    title.innerHTML = "Contact Us";
+
+    gallery.innerHTML = `
+        <div class="contact-box">
+            <p><strong>Shop Name:</strong> Mani's Boards & Stickers</p>
+            <p><strong>Phone:</strong> +91 9876543210</p>
+            <p><strong>Email:</strong> maniboards@gmail.com</p>
+            <p><strong>Address:</strong> Tamil Nadu, India</p>
+            <p><strong>Instagram:</strong> @maniboards</p>
+        </div>
+    `;
+
+    section.style.display = "block";
+}
+</script>
+
+
+</body>
